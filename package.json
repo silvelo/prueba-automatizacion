@@ -1,6 +1,6 @@
 {
   "name": "prueba-automatizacion",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@semantic-release/changelog": "^6.0.3",
-    "conventional-changelog-atom": "^2.0.8",
     "husky": "^8.0.3",
     "semantic-release": "^19.0.0"
   },
@@ -35,12 +34,12 @@
     "branches": [
       "main"
     ],
-    "preset": "atom",
+    "preset": "angular",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog"
+      "@semantic-release/changelog",
+      "@semantic-release/github"
     ]
-  },
-  "dryRun": true
+  }
 }
