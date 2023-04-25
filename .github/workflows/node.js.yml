@@ -7,6 +7,9 @@ on:
   push:
     branches: [ "main" ]
 
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 permissions:
   contents: read # for checkout
 
@@ -31,6 +34,4 @@ jobs:
     - name: Install dependencies
       run: npm clean-install
     - name: Release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       run: npm run semantic-release
