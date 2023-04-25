@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/silvelo/prueba-automatizacion/compare/v1.1.0...v1.1.1) (2023-04-25)
+
+
+### Bug Fixes
+
+* run workflow in parallel ([a65b6e6](https://github.com/silvelo/prueba-automatizacion/commit/a65b6e6eda17a0f0a830add0ec10801ebddaab52))
+
 # [1.1.0](https://github.com/silvelo/prueba-automatizacion/compare/v1.0.3...v1.1.0) (2023-04-25)
 
 
