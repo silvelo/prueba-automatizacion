@@ -11,7 +11,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
-  contents: read # for checkout
+  contents: write
 
 jobs:
   release:
@@ -48,6 +48,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 5
         
       - name: Set Git config
         run: |
@@ -56,9 +58,7 @@ jobs:
 
       - name: Merge dev back to develop
         run: |
-          git fetch --depth=5
           git checkout develop
           git pull
           git merge --no-ff main -m "Auto-merge master back to develop"
           git push
-          
