@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/silvelo/prueba-automatizacion/compare/v1.1.1...v1.2.0) (2023-05-23)
+
+
+### Features
+
+* changes ([6744e1e](https://github.com/silvelo/prueba-automatizacion/commit/6744e1e2892001a8d5f68bcf7b4f8223b14d92dd))
+* changes ([8ba18ea](https://github.com/silvelo/prueba-automatizacion/commit/8ba18eac1ab749df1143a0d834ec16547e09194e))
+
 ## [1.1.1](https://github.com/silvelo/prueba-automatizacion/compare/v1.1.0...v1.1.1) (2023-04-25)
 
 
