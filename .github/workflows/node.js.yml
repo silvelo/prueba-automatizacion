@@ -54,10 +54,10 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "Github Actions"
 
-      - name: Merge dev back to dev
+      - name: Merge dev back to develop
         run: |
-          fetch --depth=5
-          git checkout dev
+          git fetch --depth=5
+          git checkout develop
           git pull
-          git merge --no-ff main -m "Auto-merge master back to dev"
+          git merge --no-ff main -m "Auto-merge master back to develop"
           git push
