@@ -56,7 +56,7 @@ jobs:
 
       - name: Merge dev back to develop
         run: |
-          git fetch --depth=5000
+          git fetch --depth=50000
           git checkout develop
           git pull
           git merge --no-ff --allow-unrelated-histories main -m "Auto-merge master back to develop"
