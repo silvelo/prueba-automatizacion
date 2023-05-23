@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/silvelo/prueba-automatizacion/compare/v1.5.8...v1.5.9) (2023-05-23)
+
+
+### Bug Fixes
+
+* changes ([a36cc3e](https://github.com/silvelo/prueba-automatizacion/commit/a36cc3ef80f131d78ceebbac96148158d2aeb978))
+
 ## [1.5.8](https://github.com/silvelo/prueba-automatizacion/compare/v1.5.7...v1.5.8) (2023-05-23)
 
 
