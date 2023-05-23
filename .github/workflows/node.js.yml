@@ -49,8 +49,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          depth: 50000
-
+          fetch-depth: 0
+          ref: main
       - name: Set Git config
         run: |
           git config --local user.email "actions@github.com"
@@ -58,7 +58,7 @@ jobs:
 
       - name: Merge dev back to develop
         run: |
-          git fetch --depth=50000
+          git fetch --depth=500
           git log
           git checkout develop
           git pull
