@@ -61,3 +61,4 @@ jobs:
           git pull
           git merge --no-ff main -m "Auto-merge master back to develop"
           git push
+          
