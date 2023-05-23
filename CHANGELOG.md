@@ -1,3 +1,24 @@
+## [1.5.4](https://github.com/silvelo/prueba-automatizacion/compare/v1.5.3...v1.5.4) (2023-05-23)
+
+
+### Bug Fixes
+
+* changes ([bf93dd9](https://github.com/silvelo/prueba-automatizacion/commit/bf93dd94d6535a74baa560174c55f610d7838831))
+
+## [1.5.3](https://github.com/silvelo/prueba-automatizacion/compare/v1.5.2...v1.5.3) (2023-05-23)
+
+
+### Bug Fixes
+
+* changes ([7c1964d](https://github.com/silvelo/prueba-automatizacion/commit/7c1964d391bdba949565a85dd6cefbc04ec6a185))
+
+## [1.5.2](https://github.com/silvelo/prueba-automatizacion/compare/v1.5.1...v1.5.2) (2023-05-23)
+
+
+### Bug Fixes
+
+* changes ([286a2dc](https://github.com/silvelo/prueba-automatizacion/commit/286a2dcf7fceebceba9f1d16726ee981381c2194))
+
 ## [1.5.1](https://github.com/silvelo/prueba-automatizacion/compare/v1.5.0...v1.5.1) (2023-05-23)
 
 

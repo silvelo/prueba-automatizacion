@@ -11,7 +11,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
-  contents: read # for checkout
+  contents: write
 
 jobs:
   release:
@@ -48,7 +48,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Set Git config
         run: |
           git config --local user.email "actions@github.com"
@@ -56,8 +56,8 @@ jobs:
 
       - name: Merge dev back to develop
         run: |
-          git fetch --depth=5
+          git fetch --depth=5000
           git checkout develop
           git pull
-          git merge --no-ff main -m "Auto-merge master back to develop"
+          git merge --no-ff --allow-unrelated-histories main -m "Auto-merge master back to develop"
           git push
