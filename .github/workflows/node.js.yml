@@ -63,4 +63,5 @@ jobs:
           git checkout develop
           git pull
           git merge --no-ff --allow-unrelated-histories main -m "Auto-merge master back to develop"
+          git log
           git push
