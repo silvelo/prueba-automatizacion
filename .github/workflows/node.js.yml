@@ -14,33 +14,8 @@ permissions:
   contents: read # for checkout
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - name: Install dependencies
-        run: npm clean-install
-      - name: Test
-        run: npm run test
-      - name: Build
-        run: npm run build
-
   release:
-    needs: deploy
-    if: github.ref == 'refs/heads/main'
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write # to be able to publish a GitHub release
@@ -61,4 +36,27 @@ jobs:
         run: npm clean-install
       - name: Release
         run: npm run semantic-release
-  
+  merge_release:
+    needs: [release]
+    runs-on: ubuntu-20.04
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+    env:
+      FROM_BRANCH: main
+      TO_BRANCH: develop
+      USER_NAME: Github Actions
+      USER_MAIL: actions@github.com
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Set git config
+        run: |
+          git config --local user.email ${{env.USER_MAIL}}
+          git config --local user.name ${{env.USER_NAME}}
+      - name: Merge ${{env.FROM_BRANCH}} and push to ${{env.TO_BRANCH}}
+        run: |
+          git checkout ${{env.TO_BRANCH}}
+          git pull
+          git merge ${{env.FROM_BRANCH}} -m "Auto-merge ${{env.FROM_BRANCH}} to ${{env.TO_BRANCH}}"
+          git push

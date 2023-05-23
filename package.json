@@ -21,6 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/types": "^17.4.4",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "husky": "^8.0.3",
@@ -29,25 +30,6 @@
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
-  },
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "preset": "angular",
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      "@semantic-release/git",
-      [
-        "@semantic-release/github",
-        {
-          "successComment": false,
-          "failTitle": false
-        }
-      ]
     ]
   }
 }
