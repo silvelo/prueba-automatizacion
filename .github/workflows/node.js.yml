@@ -50,13 +50,15 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Set git config
+      - name: Set Git config
         run: |
-          git config --local user.email ${{env.USER_MAIL}}
-          git config --local user.name ${{env.USER_NAME}}
-      - name: Merge ${{env.FROM_BRANCH}} and push to ${{env.TO_BRANCH}}
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+
+      - name: Merge master back to dev
         run: |
-          git checkout ${{env.TO_BRANCH}}
+          git fetch --unshallow
+          git checkout dev
           git pull
-          git merge ${{env.FROM_BRANCH}} -m "Auto-merge ${{env.FROM_BRANCH}} to ${{env.TO_BRANCH}}"
+          git merge --no-ff main -m "Auto-merge master back to dev"
           git push
